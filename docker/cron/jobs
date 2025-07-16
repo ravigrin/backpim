@@ -1,0 +1,14 @@
+25 * * * * /usr/local/bin/php /usr/app/bin/console influence:influence-integration:update 2>&1
+30 * * * * /usr/local/bin/php /usr/app/bin/console influence:self-purchase:update 2>&1
+
+50 * * * * /usr/local/bin/php /usr/app/bin/console shared:monitoring:check 2>&1
+
+00 8 * * * /usr/local/bin/php /usr/app/bin/console wb:import price 2>&1
+01 8 * * * /usr/local/bin/php /usr/app/bin/console wb:init fill-net-cost 2>&1
+02 8 * * * /usr/local/bin/php /usr/app/bin/console ozon:dwn:prices 2>&1
+
+03 8 * * * /usr/local/bin/php /usr/app/bin/console mobzio:import link dwh 2>&1
+04 8 * * * /usr/local/bin/php /usr/app/bin/console mobzio:import stat dwh 2>&1
+
+30 * * * * /usr/local/bin/php /usr/app/bin/console wb:import product 2>&1
+40 * * * * /usr/local/bin/php /usr/app/bin/console ozon:import product 2>&1

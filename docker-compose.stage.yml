@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  php:
+    container_name: integraaal-stage-php
+    build:
+      context: "./"
+      target: php_stage
+    depends_on:
+      - redis
+    ports:
+      - "8055:80"
+      - "9055:9000"
+    networks:
+      integraaal-stage:
+
+  redis:
+    container_name: integraaal-stage-redis
+    image: redis:7-alpine
+    networks:
+      integraaal-stage:
+
+networks:
+  integraaal-stage:

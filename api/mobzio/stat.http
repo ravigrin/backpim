@@ -1,0 +1,20 @@
+### Get full statistic by link
+POST {{host}}/api/v1/mobzio/statistic
+Content-Type: application/json
+X-AUTH-TOKEN: {{token}}
+
+{
+  "linkId": "018db1bd-d0da-702b-9b63-a57ef7cc8491"
+}
+
+### Get full statistic by period
+POST {{host}}/api/v1/mobzio/statistic
+Content-Type: application/json
+X-AUTH-TOKEN: {{token}}
+
+{
+ "filter": {
+   "page": 12,
+   "perPage": 10
+ }
+}

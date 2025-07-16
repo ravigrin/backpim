@@ -1,0 +1,45 @@
+image: nosdmit/integraaal-php
+
+variables:
+    APP_ENV: 'prod'
+    DATABASE_HOST: "mssql-db"
+    DATABASE_PORT: "1433"
+    DATABASE_USER: "SA"
+    DATABASE_PWD: "is765DKJfy*Xd5"
+    DATABASE_NAME: "integraaal"
+
+before_script:
+    - composer install --optimize-autoloader
+
+cache:
+    paths:
+        - vendor/
+
+stages:
+    - CodingStandards
+    - UnitTests
+
+deptrac:
+    stage: CodingStandards
+    script:
+        - composer deptrac
+    allow_failure: false
+
+psalm:
+    stage: CodingStandards
+    script:
+        - composer psalm
+    allow_failure: true
+
+phpstan:
+    stage: CodingStandards
+    script:
+        - composer phpstan
+    allow_failure: true
+
+phpunit:
+    stage: UnitTests
+    script:
+        - composer tests
+    allow_failure: false
+

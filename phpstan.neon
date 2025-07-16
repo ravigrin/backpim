@@ -1,0 +1,17 @@
+includes:
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+    - vendor/phpstan/phpstan-doctrine/rules.neon
+    
+parameters:
+    paths:
+        - module/shared/src
+        - module/pim/src
+        - module/ozon/src
+        - module/influence/src
+        - module/one-c/src
+        - src
+        - tests
+    level: 9
+    ignoreErrors:
+    excludePaths:
+    tmpDir: var/phpstan

@@ -1,0 +1,49 @@
+### symfony/framework ###
+var/
+vendor/
+src/Maker
+### symfony/framework ###
+
+api/http-client.env.json
+
+###> qossmic/deptrac-shim ###
+.deptrac.cache
+###< qossmic/deptrac-shim ###
+
+###> phpunit/phpunit ###
+.phpunit.result.cache
+.phpunit.cache
+.build
+###< phpunit/phpunit ###
+
+###> friendsofphp/php-cs-fixer ###
+.php-cs-fixer.cache
+###< friendsofphp/php-cs-fixer ###
+
+### phpstan cache ###
+phpstan/
+### phpstan cache ###
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+/files/images/*
+
+###> symfony/phpunit-bridge ###
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+.DS_Store
+.idea
+###> baldinof/roadrunner-bundle ###
+/bin/rr
+###< baldinof/roadrunner-bundle ###
+
+.phpdoc

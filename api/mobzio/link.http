@@ -1,0 +1,43 @@
+### Get all links
+POST {{host}}/api/v1/mobzio/links
+Content-Type: application/json
+X-AUTH-TOKEN: {{token}}
+
+{
+  "page": 1,
+  "perPage": 5
+}
+
+### Get one link info
+POST {{host}}/api/v1/mobzio/link
+Content-Type: application/json
+
+{
+  "linkId": "018dc5b6-44ac-72c2-8afd-27bc162772a2"
+}
+
+### Create new link
+POST {{host}}/api/v1/mobzio/create
+Content-Type: application/json
+
+{
+  "productId": "207E4361-27A1-11EE-8C1E-81E0F3CAA235",
+  "phrase": "Шампунь три в одном",
+  "blogger": "burger"
+}
+
+### Get excel
+GET {{host}}/api/v1/mobzio/excel?source=links
+Content-Type: application/json
+#X-AUTH-TOKEN: {{token}}
+
+
+### Get excel by link
+GET {{host}}/api/v1/mobzio/excel?source=stat&linkId=018e2f86-fa5c-7094-bdad-282921c9661d
+Content-Type: application/json
+X-AUTH-TOKEN: {{token}}
+
+
+### Get excel by link with dates filter
+GET {{host}}/api/v1/mobzio/excel?source=stat&linkId=018e2f86-fa68-729c-8f9a-21b4cf4e803a&dateFrom=2024-02-01&dateTo=2024-02-29
+Content-Type: application/json
